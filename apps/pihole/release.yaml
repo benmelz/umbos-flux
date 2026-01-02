@@ -14,20 +14,18 @@ spec:
         name: pihole
         namespace: flux-system
   values:
-    replicaCount: 1
-    serviceDns:
-      type: LoadBalancer
-      loadBalancerIP: "192.168.50.249"
-    serviceWeb:
-      type: ClusterIP
-      https:
-        enabled: false
-    persistentVolumeClaim:
-      enabled: true
-    DNS1: "1.1.1.1"
-    DNS2: "1.0.0.1"
     admin:
       existingSecret: "pihole"
       passwordKey: "admin-password"
+    DNS1: "1.1.1.1"
+    DNS2: "1.0.0.1"
     extraEnvVars:
       TZ: "America/New_York"
+    persistentVolumeClaim:
+      enabled: true
+    serviceWeb:
+      type: NodePort
+      http:
+        nodePort: 39278
+      https:
+        enabled: false
