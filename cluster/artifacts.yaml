@@ -10,13 +10,13 @@ spec:
       kind: GitRepository
       name: flux-system
   artifacts:
-    - name: infrastructure
-      originRevision: "@monorepo"
-      copy:
-        - from: "@monorepo/infrastructure/**"
-          to: "@artifact/"
     - name: apps
       originRevision: "@monorepo"
       copy:
         - from: "@monorepo/apps/**"
-          to: "@artifact/"
+          to: "@artifact/apps"
+    - name: infrastructure
+      originRevision: "@monorepo"
+      copy:
+        - from: "@monorepo/infrastructure/**"
+          to: "@artifact/infrastructure"
