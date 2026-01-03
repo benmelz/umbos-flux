@@ -9,7 +9,7 @@ spec:
     - name: infrastructure-configs
   interval: 1h
   retryInterval: 2m
-  timeout: 5m
+  timeout: 1m
   sourceRef:
     kind: ExternalArtifact
     name: apps

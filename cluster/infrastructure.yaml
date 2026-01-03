@@ -9,7 +9,7 @@ spec:
     - name: infrastructure-controllers
   interval: 1h
   retryInterval: 2m
-  timeout: 5m
+  timeout: 1m
   sourceRef:
     kind: ExternalArtifact
     name: infrastructure
@@ -24,7 +24,7 @@ metadata:
 spec:
   interval: 1h
   retryInterval: 2m
-  timeout: 5m
+  timeout: 1m
   sourceRef:
     kind: ExternalArtifact
     name: infrastructure
