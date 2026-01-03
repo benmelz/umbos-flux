@@ -21,11 +21,15 @@ spec:
     DNS2: "1.0.0.1"
     extraEnvVars:
       TZ: "America/New_York"
-    persistentVolumeClaim:
-      enabled: true
+    serviceDns:
+      type: LoadBalancer
+      loadBalancerIP: "192.168.50.249"
+    serviceDhcp:
+      enabled: false
     serviceWeb:
-      type: NodePort
-      http:
-        nodePort: 39278
+      type: LoadBalancer
+      loadBalancerIP: "192.168.50.249"
       https:
         enabled: false
+    persistentVolumeClaim:
+      enabled: true
