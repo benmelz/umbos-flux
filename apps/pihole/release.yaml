@@ -22,13 +22,14 @@ spec:
     extraEnvVars:
       TZ: "America/New_York"
     serviceDns:
+      mixedService: true
       type: LoadBalancer
       loadBalancerIP: "192.168.50.249"
     serviceDhcp:
       enabled: false
     serviceWeb:
-      type: LoadBalancer
-      loadBalancerIP: "192.168.50.249"
+      http:
+        enabled: false
       https:
         enabled: false
     persistentVolumeClaim:
